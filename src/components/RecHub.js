@@ -6,6 +6,7 @@ import { Login } from "./auth/Login"
 import { Logout } from "./auth/Login"
 import { Register } from "./auth/Register"
 import { ActivityProvider } from "./activities/ActivityProvider"
+import { ActivityList } from "./activities/ActivityList"
 import "./RecHub.css"
 
 export const RecHub = (props) => (
@@ -13,7 +14,7 @@ export const RecHub = (props) => (
         <div className="mainContainer">
                 <Route render={() => {
              // The user id is saved under the key app_user_id in local Storage. Change below if needed!
-            if (localStorage.getItem("app_user_id")) {
+            if (localStorage.getItem("rh_token")) {
                 return (
                     <>
                     <div className="header" id="myHeader">
@@ -21,9 +22,15 @@ export const RecHub = (props) => (
                         <Link className="logout" to="/login" onClick={()=>{Logout()}}>logout</Link>
                     </div>
                         <ActivityProvider>
-                            
+                            <div className="list-group">
+                            <Route exact path="/" render={
+                            props => 
+                                <>  
+                                    <ActivityList className="list-group-item" />
+                                </>
+                            } />   
+                            </div>
                         </ActivityProvider>
-
                 </>
                 )
             } else {
