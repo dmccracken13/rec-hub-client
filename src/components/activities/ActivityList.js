@@ -3,7 +3,7 @@ import { ActivityContext } from "../activities/ActivityProvider"
 import { Activity } from "./Activity"
 import "./Activity.css"
 
-export const ActivityList = () => {
+export const ActivityList = (props) => {
     const { activities, getActivities } = useContext(ActivityContext)
     
     useEffect(()=>{
@@ -14,6 +14,10 @@ export const ActivityList = () => {
         <>
             <div className="column">
             <h1>Activities</h1>
+            <button className="btn btn-secondary" onClick={() => {
+                    props.history.push(`/activities/add`)
+                }}>New Activity
+                </button>
                 <div className="column">
                     {activities
                     .map(activity => {

@@ -14,6 +14,7 @@ export const ActivityForm = (props) => {
             name: data.activity
         }
         addActivity(newActObj)
+        .then(props.history.push(`/`))
         }
         reset("")
     }
