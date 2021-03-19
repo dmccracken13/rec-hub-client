@@ -7,7 +7,7 @@ import React, { useState } from "react"
 export const ContainerContext = React.createContext()
 
 /*
- This component establishes what data can be used.
+    This component establishes what data can be used.
  */
 export const ContainerProvider = (props) => {
     const [containers, setContainers] = useState([])
@@ -26,7 +26,7 @@ export const ContainerProvider = (props) => {
         return fetch("http://localhost:8000/containers", {
             method: "POST",
             headers: {
-                "Authorization": `Token ${localStorage.getItem("lu_token")}`,
+                "Authorization": `Token ${localStorage.getItem("rh_token")}`,
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(container)
@@ -36,7 +36,10 @@ export const ContainerProvider = (props) => {
 
     const removeContainer = containerId => {
         return fetch(`http://localhost:8000/containers/${containerId}`, {
-            method: "DELETE"
+            method: "DELETE",
+            headers:{
+                "Authorization": `Token ${localStorage.getItem("rh_token")}`
+            }
         })
             .then(getContainers)
     }
@@ -45,6 +48,7 @@ export const ContainerProvider = (props) => {
         return fetch(`http://localhost:8000/containers/${container.id}`, {
             method: "PATCH",
             headers: {
+                "Authorization": `Token ${localStorage.getItem("rh_token")}`,
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(container)
@@ -54,8 +58,9 @@ export const ContainerProvider = (props) => {
 
     /*
         You return a context provider which has the
-        `container` state, the `addcContainer` function,
-        and the `getContainer` function as keys. This
+        `container` state, the `addContainer` function,
+        the `getContainer` function, the `removeContainer` function,
+        and the `updateContainer` function as keys. This
         allows any child elements to access them.
     */
     return (

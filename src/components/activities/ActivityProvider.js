@@ -36,8 +36,8 @@ export const ActivityProvider = (props) => {
 
     /*
         You return a context provider which has the
-        `categories` state, the `addcategories` function,
-        and the `getCategory` function as keys. This
+        `activities` state, the `addActivities` function,
+        and the `getActivity` function as keys. This
         allows any child elements to access them.
     */
     return (
