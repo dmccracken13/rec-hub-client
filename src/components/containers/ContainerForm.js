@@ -14,6 +14,7 @@ export const ContainerForm = (props) => {
             name: data.container
         }
         addContainer(newContObj)
+        .then(props.history.push(`/`))
         }
         reset("")
     }

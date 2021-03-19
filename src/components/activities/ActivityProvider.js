@@ -26,7 +26,7 @@ export const ActivityProvider = (props) => {
         return fetch("http://localhost:8000/activities", {
             method: "POST",
             headers: {
-                "Authorization": `Token ${localStorage.getItem("lu_token")}`,
+                "Authorization": `Token ${localStorage.getItem("rh_token")}`,
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(activity)

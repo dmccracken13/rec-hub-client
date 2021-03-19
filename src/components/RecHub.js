@@ -1,42 +1,20 @@
 import React from "react"
 import { Route, Redirect } from "react-router-dom"
-import "bootstrap/dist/css/bootstrap.min.css"
-import { Link } from "react-router-dom"
+import { ApplicationViews } from "./ApplicationViews"
+import { NavBar } from "./nav/NavBar"
 import { Login } from "./auth/Login"
-import { Logout } from "./auth/Login"
 import { Register } from "./auth/Register"
-import { ActivityProvider } from "./activities/ActivityProvider"
-import { ActivityList } from "./activities/ActivityList"
-import { ContainerProvider } from "./containers/ContainerProvider"
-import { ContainerList } from "./containers/ContainerList"
 import "./RecHub.css"
 
-export const RecHub = (props) => (
+export const RecHub = () => (
     <>
-        <div className="mainContainer">
-                <Route render={() => {
-             // The user id is saved under the key app_user_id in local Storage. Change below if needed!
+        <Route render={() => {
             if (localStorage.getItem("rh_token")) {
                 return (
                     <>
-                    <div className="header" id="myHeader">
-                        <h2>RecHub</h2>
-                        <Link className="logout" to="/login" onClick={()=>{Logout()}}>logout</Link>
-                    </div>
-                        <ActivityProvider>
-                            <ContainerProvider>
-                                <div className="list-group">
-                                <Route exact path="/" render={
-                                props => 
-                                    <>  
-                                        <ActivityList className="list-group-item" />
-                                        <ContainerList className="list-group-item" />
-                                    </>
-                                } />   
-                                </div>
-                            </ContainerProvider>
-                        </ActivityProvider>
-                </>
+                        <Route render={props => <NavBar {...props} />} />
+                        <Route render={props => <ApplicationViews {...props} />} />
+                    </>
                 )
             } else {
                 return <Redirect to="/login" />
@@ -45,6 +23,5 @@ export const RecHub = (props) => (
 
         <Route path="/login" render={props => <Login {...props} />} />
         <Route path="/register" render={props => <Register {...props} />} />
-        </div>
     </>
 )

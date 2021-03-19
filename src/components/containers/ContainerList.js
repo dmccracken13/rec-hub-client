@@ -3,7 +3,7 @@ import { ContainerContext } from "../containers/ContainerProvider"
 import { Container } from "./Container"
 import "./Container.css"
 
-export const ContainerList = () => {
+export const ContainerList = (props) => {
     const { containers, getContainers } = useContext(ContainerContext)
     
     useEffect(()=>{
@@ -14,6 +14,10 @@ export const ContainerList = () => {
         <>
             <div className="column">
             <h1>Containers</h1>
+            <button className="btn btn-secondary" onClick={() => {
+                    props.history.push(`/containers/add`)
+                }}>New Container
+                </button>
                 <div className="column">
                     {containers
                     .map(container => {
