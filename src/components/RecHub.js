@@ -7,6 +7,8 @@ import { Logout } from "./auth/Login"
 import { Register } from "./auth/Register"
 import { ActivityProvider } from "./activities/ActivityProvider"
 import { ActivityList } from "./activities/ActivityList"
+import { ContainerProvider } from "./containers/ContainerProvider"
+import { ContainerList } from "./containers/ContainerList"
 import "./RecHub.css"
 
 export const RecHub = (props) => (
@@ -22,14 +24,17 @@ export const RecHub = (props) => (
                         <Link className="logout" to="/login" onClick={()=>{Logout()}}>logout</Link>
                     </div>
                         <ActivityProvider>
-                            <div className="list-group">
-                            <Route exact path="/" render={
-                            props => 
-                                <>  
-                                    <ActivityList className="list-group-item" />
-                                </>
-                            } />   
-                            </div>
+                            <ContainerProvider>
+                                <div className="list-group">
+                                <Route exact path="/" render={
+                                props => 
+                                    <>  
+                                        <ActivityList className="list-group-item" />
+                                        <ContainerList className="list-group-item" />
+                                    </>
+                                } />   
+                                </div>
+                            </ContainerProvider>
                         </ActivityProvider>
                 </>
                 )
