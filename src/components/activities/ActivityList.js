@@ -17,7 +17,7 @@ export const ActivityList = (props) => {
             <button className="btn btn-secondary" onClick={() => {
                     props.history.push(`/activities/add`)
                 }}>New Activity
-                </button>
+            </button>
                 <div className="column">
                     {activities
                     .map(activity => {
