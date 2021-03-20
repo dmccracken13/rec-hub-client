@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react"
+import { Link } from "react-router-dom"
 import { ContainerContext } from "../containers/ContainerProvider"
 import { Container } from "./Container"
 import "./Container.css"
@@ -21,9 +22,9 @@ export const ContainerList = (props) => {
                 <div className="column">
                     {containers
                     .map(container => {
-                            return <Container key={container.id} 
-                            container={container} 
-                            />
+                            return <Link key={container.id} to={`/containers/${container.id}`}>
+                                        <h3>{container.name}</h3>
+                                    </Link>
                     })
                     }
                 </div>

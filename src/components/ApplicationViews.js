@@ -8,6 +8,11 @@ import { ActivityForm } from "./activities/ActivityForm"
 import { ContainerProvider } from "./containers/ContainerProvider"
 import { ContainerList } from "./containers/ContainerList"
 import { ContainerForm } from "./containers/ContainerForm"
+import { ContainerDetails } from "./containers/ContainerDetails"
+import { ItemProvider } from "./items/ItemProvider"
+import { ItemList } from "./items/ItemList"
+import { ItemForm } from "./items/ItemForm"
+
 
 export const ApplicationViews= (props) => (
     <>
@@ -17,39 +22,57 @@ export const ApplicationViews= (props) => (
                     </div>
                         <ActivityProvider>
                             <ContainerProvider>
-                                <div className="list-group">
-                                <Route exact path="/" render={
-                                props => 
-                                    <>  
-                                        <ActivityList {...props} className="list-group-item" />
-                                        <ContainerList {...props} className="list-group-item" />
-                                    </>
-                                } />   
-                                </div>
+                                <ItemProvider>
+                                    <div className="list-group">
+                                    <Route exact path="/" render={
+                                    props => 
+                                        <>  
+                                            <ActivityList {...props} className="list-group-item" />
+                                            <ItemList {...props} className="list-group-item" />
+                                            <ContainerList {...props} className="list-group-item" />
+                                        </>
+                                    } />   
+                                    </div>
+                                </ItemProvider>
                             </ContainerProvider>
                         </ActivityProvider>
 
                         <ContainerProvider>
-                        <div className="list-group">
-                                <Route exact path="/containers/add" render={
-                                props => 
-                                    <>  
-                                        <ContainerForm {...props} className="list-group-item" />
-                                    </>
-                                } />   
-                                </div>
+                            <ItemProvider>
+                                <ActivityProvider>
+                                    <div className="list-group">
+                                            <Route exact path="/containers/add" render={
+                                            props => 
+                                                <>  
+                                                    <ContainerForm {...props} className="list-group-item" />
+                                                </>
+                                            } /> 
+                                            <Route exact path="/containers/:containerId(\d+)" render={
+                                            props => 
+                                                <>  
+                                                    <ContainerDetails {...props} className="list-group-item" />
+                                                </>
+                                            } />
+                                            <Route exact path="/activities/add" render={
+                                            props => 
+                                                <>  
+                                                    <ActivityForm {...props} className="list-group-item" />
+                                                </>
+                                            } />
+                                            <Route exact path="/items/add" render={
+                                            props => 
+                                                <>  
+                                                    <ItemForm {...props} className="list-group-item" />
+                                                </>
+                                            } />         
+                                    </div>
+                                </ActivityProvider>
+                            </ItemProvider>    
                         </ContainerProvider>
 
-                        <ActivityProvider>
-                        <div className="list-group">
-                                <Route exact path="/activities/add" render={
-                                props => 
-                                    <>  
-                                        <ActivityForm {...props} className="list-group-item" />
-                                    </>
-                                } />   
-                                </div>
-                        </ActivityProvider>
+                        
+                            
+                        
         </div>
     </>
 )
