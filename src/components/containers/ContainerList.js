@@ -22,9 +22,9 @@ export const ContainerList = (props) => {
                 <div className="column">
                     {containers
                     .map(container => {
-                            return <Link key={container.id} to={`/containers/${container.id}`}>
-                                        <h3>{container.name}</h3>
-                                    </Link>
+                            return <Container key={container.id} 
+                                        container={container}
+                                    />
                     })
                     }
                 </div>

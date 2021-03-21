@@ -7,7 +7,7 @@ import React, { useState } from "react"
 export const ActivityContext = React.createContext()
 
 /*
- This component establishes what data can be used.
+    This component establishes what data can be used.
  */
 export const ActivityProvider = (props) => {
     const [activities, setActivities] = useState([])
@@ -34,6 +34,28 @@ export const ActivityProvider = (props) => {
             .then(getActivities)
     }
 
+    const removeActivity = activityId => {
+        return fetch(`http://localhost:8000/activities/${activityId}`, {
+            method: "DELETE",
+            headers:{
+                "Authorization": `Token ${localStorage.getItem("rh_token")}`
+            }
+        })
+            .then(getActivities)
+    }
+
+    const updateActivity = activity => {
+        return fetch(`http://localhost:8000/activities/${activity.id}`, {
+            method: "PATCH",
+            headers: {
+                "Authorization": `Token ${localStorage.getItem("rh_token")}`,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(activity)
+        })
+            .then(getActivities)
+    }
+
     /*
         You return a context provider which has the
         `activities` state, the `addActivities` function,
@@ -42,7 +64,7 @@ export const ActivityProvider = (props) => {
     */
     return (
         <ActivityContext.Provider value={{
-            activities, addActivity, getActivities
+            activities, addActivity, getActivities, removeActivity, updateActivity
         }}>
             {props.children}
         </ActivityContext.Provider>

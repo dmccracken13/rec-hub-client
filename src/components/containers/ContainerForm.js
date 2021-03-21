@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { useHistory } from "react-router-dom";
 import { ContainerContext } from "./ContainerProvider"
 import "./Container.css"
 
 export const ContainerForm = (props) => {
     const { register, handleSubmit, reset } = useForm();
     const { addContainer } = useContext(ContainerContext)
-    
+    const history = useHistory()   
     
     const onSubmit = (data) => {
         if (data) {
@@ -14,7 +15,7 @@ export const ContainerForm = (props) => {
             name: data.container
         }
         addContainer(newContObj)
-        .then(props.history.push(`/`))
+        .then(history.push(`/`))
         }
         reset("")
     }
