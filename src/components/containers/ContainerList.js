@@ -15,7 +15,7 @@ export const ContainerList = (props) => {
         <>
             <div className="column">
             <h1>Containers</h1>
-            <button className="btn btn-secondary" onClick={() => {
+            <button className="btn btn-success" onClick={() => {
                     props.history.push(`/containers/add`)
                 }}>New Container
                 </button>

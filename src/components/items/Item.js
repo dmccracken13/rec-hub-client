@@ -15,7 +15,7 @@ export const Item= ({ item, props }) => {
             <div className="item__name">Type: {item.type.name}</div>
             <div className="item__name">Status: {item.status.name}</div>
             <div className="item__name">Activity: {item.activity.name}</div>
-            <button className="btn btn-secondary" onClick={() => {
+            <button className="btn btn-warning" onClick={() => {
                     history.push(`/items/edit/${item.id}`)
                 }}>Edit
             </button>

@@ -19,7 +19,7 @@ export const ItemList = (props) => {
         <>
             <div className="column">
             <h1>Items</h1>
-            <button className="btn btn-secondary" onClick={() => {
+            <button className="btn btn-success" onClick={() => {
                     props.history.push(`/items/add`)
                 }}>New Item                
             </button>
