@@ -46,7 +46,7 @@ export const ActivityProvider = (props) => {
 
     const updateActivity = activity => {
         return fetch(`http://localhost:8000/activities/${activity.id}`, {
-            method: "PATCH",
+            method: "PUT",
             headers: {
                 "Authorization": `Token ${localStorage.getItem("rh_token")}`,
                 "Content-Type": "application/json"

@@ -63,6 +63,9 @@ export const ApplicationViews= (props) => (
                                                             <ActivityForm {...props} className="list-group-item" />
                                                         </>
                                                     } />
+                                                    <Route exact path="/activities/edit/:activityId(\d+)" render={
+                                                    props => <ActivityForm {...props} />
+                                                    } /> 
                                                     <Route exact path="/items/add" render={
                                                     props => 
                                                         <>  
