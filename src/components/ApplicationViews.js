@@ -51,6 +51,9 @@ export const ApplicationViews= (props) => (
                                                             <ContainerForm {...props} className="list-group-item" />
                                                         </>
                                                     } /> 
+                                                    <Route exact path="/containers/edit/:containerId(\d+)" render={
+                                                    props => <ContainerForm {...props} />
+                                                    } /> 
                                                     <Route exact path="/containers/:containerId(\d+)" render={
                                                     props => 
                                                         <>  
@@ -63,11 +66,17 @@ export const ApplicationViews= (props) => (
                                                             <ActivityForm {...props} className="list-group-item" />
                                                         </>
                                                     } />
+                                                    <Route exact path="/activities/edit/:activityId(\d+)" render={
+                                                    props => <ActivityForm {...props} />
+                                                    } /> 
                                                     <Route exact path="/items/add" render={
                                                     props => 
                                                         <>  
                                                             <ItemForm {...props} className="list-group-item" />
                                                         </>
+                                                    } />
+                                                    <Route exact path="/items/edit/:itemId(\d+)" render={
+                                                    props => <ItemForm {...props} />
                                                     } />         
                                             </div>
                                         </TypeProvider>

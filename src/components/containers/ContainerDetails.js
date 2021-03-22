@@ -24,7 +24,6 @@ export const ContainerDetails = (props) => {
     useEffect(() => {
         const newItems = items.filter(i => i.container !== null)
         setFilteredItems(newItems)
-        console.log(filteredItems)
     }, [items])
 
     return (
@@ -42,16 +41,6 @@ export const ContainerDetails = (props) => {
                     />
                     })}
             </div>
-            {/* <button onClick={
-                () => {
-                    removeEmployee(employee.id)  // you can also use props.match.params.employeeId
-                        .then(() => {
-                            props.history.push("/employees")
-                        })
-                }
-            }>
-                Remove Employee
-            </button> */}
         </section>
     )
 }

@@ -12,6 +12,10 @@ export const Activity = ({ activity, props }) => {
             <section className="activity">
                 <div className="activity__name">{activity.name}</div>
             </section>
+            <button className="btn btn-secondary" onClick={() => {
+                    history.push(`/activities/edit/${activity.id}`)
+                }}>Edit
+            </button>
             <button type="button"className="btn btn-danger" id={activity.id}
             onClick={
                 () => {

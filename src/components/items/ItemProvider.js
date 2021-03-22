@@ -46,8 +46,8 @@ export const ItemProvider = (props) => {
     }
 
     const updateItem = item => {
-        return fetch(`http://localhost:8000/containers/${item.id}`, {
-            method: "PATCH",
+        return fetch(`http://localhost:8000/items/${item.id}`, {
+            method: "PUT",
             headers: {
                 "Authorization": `Token ${localStorage.getItem("rh_token")}`,
                 "Content-Type": "application/json"
@@ -65,7 +65,7 @@ export const ItemProvider = (props) => {
     */
     return (
         <ItemContext.Provider value={{
-            items, filteredItems, addItem, getItems, removeItem, updateItem, setItems, setFilteredItems 
+            items, filteredItems, addItem, getItems, removeItem, updateItem, setFilteredItems 
         }}>
             {props.children}
         </ItemContext.Provider>
