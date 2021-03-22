@@ -6,8 +6,8 @@ import "./Activity.css"
 export const ActivityForm = (props) => {
     const { register, handleSubmit, reset } = useForm();
     const { activities, addActivity, getActivities, updateActivity} = useContext(ActivityContext)
-    const editMode = props.match.params.hasOwnProperty("activityId")
     const [activity, setActivity] = useState({})
+    const editMode = props.match.params.hasOwnProperty("activityId")
 
     const handleControlledInputChange = (event) => {
         /*
@@ -37,7 +37,7 @@ export const ActivityForm = (props) => {
     }
 
     const putUpdatedAct= (data) => {
-        // create a new activity object to get passed through addActivity to be posted to the db
+        // create a new activity object to get passed through updateActivity to be posted to the db
         const editedActObj = {
         id: activity.id,
         name: data.name

@@ -74,6 +74,9 @@ export const ApplicationViews= (props) => (
                                                         <>  
                                                             <ItemForm {...props} className="list-group-item" />
                                                         </>
+                                                    } />
+                                                    <Route exact path="/items/edit/:itemId(\d+)" render={
+                                                    props => <ItemForm {...props} />
                                                     } />         
                                             </div>
                                         </TypeProvider>

@@ -24,7 +24,6 @@ export const ContainerDetails = (props) => {
     useEffect(() => {
         const newItems = items.filter(i => i.container !== null)
         setFilteredItems(newItems)
-        console.log(filteredItems)
     }, [items])
 
     return (
