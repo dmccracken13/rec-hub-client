@@ -46,7 +46,7 @@ export const ContainerProvider = (props) => {
 
     const updateContainer = container => {
         return fetch(`http://localhost:8000/containers/${container.id}`, {
-            method: "PATCH",
+            method: "PUT",
             headers: {
                 "Authorization": `Token ${localStorage.getItem("rh_token")}`,
                 "Content-Type": "application/json"

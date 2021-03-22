@@ -15,7 +15,7 @@ export const Activity = ({ activity, props }) => {
             <button className="btn btn-secondary" onClick={() => {
                     history.push(`/activities/edit/${activity.id}`)
                 }}>Edit
-                </button>
+            </button>
             <button type="button"className="btn btn-danger" id={activity.id}
             onClick={
                 () => {

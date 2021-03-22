@@ -14,6 +14,10 @@ export const Container = ({ container, props }) => {
                     history.push(`/containers/${container.id}`)
                 }}>Details
             </button> 
+            <button className="btn btn-secondary" onClick={() => {
+                    history.push(`/containers/edit/${container.id}`)
+                }}>Edit
+            </button>
             <button type="button"className="btn btn-danger" id={container.id}
                             onClick={
                                 () => {

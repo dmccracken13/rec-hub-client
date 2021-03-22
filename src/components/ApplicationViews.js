@@ -51,6 +51,9 @@ export const ApplicationViews= (props) => (
                                                             <ContainerForm {...props} className="list-group-item" />
                                                         </>
                                                     } /> 
+                                                    <Route exact path="/containers/edit/:containerId(\d+)" render={
+                                                    props => <ContainerForm {...props} />
+                                                    } /> 
                                                     <Route exact path="/containers/:containerId(\d+)" render={
                                                     props => 
                                                         <>  

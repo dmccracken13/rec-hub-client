@@ -7,7 +7,6 @@ export const ActivityForm = (props) => {
     const { register, handleSubmit, reset } = useForm();
     const { activities, addActivity, getActivities, updateActivity} = useContext(ActivityContext)
     const editMode = props.match.params.hasOwnProperty("activityId")
-
     const [activity, setActivity] = useState({})
 
     const handleControlledInputChange = (event) => {
@@ -43,7 +42,7 @@ export const ActivityForm = (props) => {
         id: activity.id,
         name: data.name
         } 
-       // addDocumentary is invoked with newDocObj being passed as the argument 
+       // updateActivity is invoked with editedActObj being passed as the argument 
         updateActivity(editedActObj)
         .then(props.history.push(`/`))
     }
@@ -62,7 +61,7 @@ export const ActivityForm = (props) => {
                 <div className="column">
                     <h5>Edit an activity </h5>
                     <input name="name" type="text" value={activity.name} onChange={handleControlledInputChange} ref={register({ required: true })} />
-                    <button className="btn btn-dark" type="submit">Submit</button>
+                    <button className="btn btn-dark" type="submit">Save</button>
                 </div>
             </form>
     )} else {
@@ -70,7 +69,7 @@ export const ActivityForm = (props) => {
             <form className="activity_form" onSubmit={handleSubmit(createNewActivity)}>
                 <div className="column">
                     <h5>Add new activity </h5>
-                    <input name="activity" type="text" defaultValue="" ref={register({ required: true })} />
+                    <input name="name" type="text" defaultValue="" ref={register({ required: true })} />
                     <button className="btn btn-dark" type="submit">Submit</button>
                 </div>
             </form>
