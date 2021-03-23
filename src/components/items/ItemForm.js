@@ -24,6 +24,7 @@ export const ItemForm = (props) => {
             and change state instead of modifying current one
         */
         const newItem = Object.assign({}, item)
+        // debugger
         newItem[event.target.name] = event.target.value
         setItem(newItem)
     }
@@ -67,7 +68,7 @@ export const ItemForm = (props) => {
         } 
        // updateActivity is invoked with editedActObj being passed as the argument 
         updateItem(editedItemObj)
-        .then(props.history.push(`/`))
+        .then(() => props.history.push(`/`))
     }
 
     useEffect(()=>{
