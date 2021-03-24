@@ -34,7 +34,7 @@ export const ContainerForm = (props) => {
             name: data.name
         }
         addContainer(newContObj)
-        .then(props.history.push(`/`))
+        .then(history.push(`/`))
         reset("")
     }
 
@@ -46,7 +46,7 @@ export const ContainerForm = (props) => {
         } 
        // updateContainer is invoked with editedContObj being passed as the argument 
         updateContainer(editedContObj)
-        .then(props.history.push(`/`))
+        .then(history.push(`/`))
     }
 
     useEffect(()=>{

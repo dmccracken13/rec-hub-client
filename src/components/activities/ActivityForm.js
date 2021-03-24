@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
+import { useHistory} from "react-router-dom";
 import { ActivityContext } from "./ActivityProvider"
 import "./Activity.css"
 
@@ -8,6 +9,7 @@ export const ActivityForm = (props) => {
     const { activities, addActivity, getActivities, updateActivity} = useContext(ActivityContext)
     const [activity, setActivity] = useState({})
     const editMode = props.match.params.hasOwnProperty("activityId")
+    const history = useHistory()
 
     const handleControlledInputChange = (event) => {
         /*
@@ -32,7 +34,7 @@ export const ActivityForm = (props) => {
             name: data.name
         }
         addActivity(newActObj)
-        .then(props.history.push(`/`))
+        .then(history.push(`/`))
         reset("")
     }
 
@@ -44,7 +46,7 @@ export const ActivityForm = (props) => {
         } 
        // updateActivity is invoked with editedActObj being passed as the argument 
         updateActivity(editedActObj)
-        .then(props.history.push(`/`))
+        .then(history.push(`/`))
     }
 
     useEffect(()=>{

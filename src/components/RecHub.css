@@ -1,0 +1,11 @@
+.mainContainer {
+    background-color: rgb(187, 225, 250);
+}
+.header {
+    background-color: rgb(58, 99, 81);
+    color: white;
+}
+.list-group {
+    display: flex;
+    justify-content: space-evenly;
+}

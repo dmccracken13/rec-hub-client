@@ -1,6 +1,7 @@
 import React, { useContext } from "react"
 import { useHistory } from "react-router-dom";
 import { ItemContext } from "./ItemProvider"
+import "./Item.css"
 
 // component responsible for rendering a single item
 
@@ -9,13 +10,13 @@ export const Item= ({ item, props }) => {
     const history = useHistory()
 
     return(
-        <section className="item">
+        <section className="card text-light border-light d-flex justify-content-center" style={{ width: '18rem' }}>
             <div className="item__name">{item.name}</div>
             <div className="item__name">Quantity: {item.quantity}</div>
             <div className="item__name">Type: {item.type.name}</div>
             <div className="item__name">Status: {item.status.name}</div>
             <div className="item__name">Activity: {item.activity.name}</div>
-            <button className="btn btn-secondary" onClick={() => {
+            <button className="btn btn-warning" onClick={() => {
                     history.push(`/items/edit/${item.id}`)
                 }}>Edit
             </button>
@@ -24,7 +25,7 @@ export const Item= ({ item, props }) => {
                             () => {
                             removeItem(+item.id)  
                                             .then(() => {
-                                            props.history.push("/")
+                                            history.push("/")
                                             })
                             }
                         }>
