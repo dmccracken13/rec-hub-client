@@ -1,0 +1,30 @@
+.list-group {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}
+.card {
+    background-color: rgb(15, 76, 117);
+}
+.list-group-item {
+    background-color: rgb(50, 130, 184);
+}
+.container {
+    display: flex;
+    flex-direction: column;
+}
+.docForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+}
+.docSearch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px
+}
+.col {
+    justify-content: space-evenly;
+}
