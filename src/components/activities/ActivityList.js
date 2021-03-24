@@ -13,7 +13,7 @@ export const ActivityList = (props) => {
     return (
         <>
             <div className="column">
-            <h1>Activities</h1>
+            <h1 className="h1">Activities</h1>
             <button className="btn btn-success" onClick={() => {
                     props.history.push(`/activities/add`)
                 }}>New Activity

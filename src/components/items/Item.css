@@ -4,10 +4,9 @@
     text-align: left;
 }
 .card {
-    background-color: rgb(15, 76, 117);
-}
-.list-group-item {
-    background-color: rgb(50, 130, 184);
+    background-color: rgb(58, 99, 81);
+    color: rgb(228, 130, 87);
+
 }
 .container {
     display: flex;
@@ -26,5 +25,10 @@
     width: 500px
 }
 .col {
-    justify-content: space-evenly;
+    justify-content: space-evenly;}
+.h1 {
+    color: rgb(57, 50, 50);
+}
+.h5 {
+    color: rgb(242, 237, 215);
 }

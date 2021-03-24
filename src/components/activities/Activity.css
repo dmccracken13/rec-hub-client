@@ -1,0 +1,33 @@
+.list-group {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}
+.card {
+    background-color: rgb(228, 130, 87);
+}
+.container {
+    display: flex;
+    flex-direction: column;
+}
+.docForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+}
+.docSearch {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px
+}
+.col {
+    justify-content: space-evenly;
+}
+.h1 {
+    color: rgb(57, 50, 50);
+}
+.h5 {
+    color: rgb(242, 237, 215);
+}

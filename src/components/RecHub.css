@@ -1,9 +1,14 @@
 .mainContainer {
-    background-color: rgb(187, 225, 250);
+    background-image: url("./Zion.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    /* height: 600px; */
 }
 .header {
     background-color: rgb(58, 99, 81);
-    color: white;
+    height: 100px;
+    color: rgb(228, 130, 87);
 }
 .list-group {
     display: flex;

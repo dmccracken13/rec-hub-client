@@ -14,7 +14,7 @@ import { ItemList } from "./items/ItemList"
 import { ItemForm } from "./items/ItemForm"
 import { StatusProvider } from "./statuses/StatusProvider"
 import { TypeProvider } from "./types/TypeProvider"
-
+import { NavBar } from "./nav/NavBar"
 
 export const ApplicationViews= (props) => (
     <>
@@ -22,6 +22,7 @@ export const ApplicationViews= (props) => (
                     <div className="header" id="myHeader">
                         <h2>RecHub</h2>
                     </div>
+                    <Route render={props => <NavBar {...props} />} />
                         <ActivityProvider>
                             <ContainerProvider>
                                 <ItemProvider>

@@ -4,12 +4,12 @@ import { useHistory } from "react-router-dom";
 
 // component responsible for rendering a single activity
 
-export const Activity = ({ activity, props }) => {
+export const Activity = ({ activity }) => {
     const { removeActivity } = useContext(ActivityContext)
     const history = useHistory()
     return(    
         <>    
-            <section className="activity">
+            <section className="card d-flex justify-content-center" style={{ width: '8rem', height: '4rem'}}>
                 <div className="activity__name">{activity.name}</div>
             </section>
             <button className="btn btn-warning" onClick={() => {
