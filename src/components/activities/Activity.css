@@ -5,6 +5,7 @@
 }
 .card {
     background-color: rgb(228, 130, 87);
+    text-align: center;
 }
 .container {
     display: flex;
@@ -30,4 +31,14 @@
 }
 .h5 {
     color: rgb(242, 237, 215);
+}
+/*The Scrollbar Root*/
+.react-scrollbar-default {
+    width: 35%;
+    min-width: 300px;
+    max-height: 450px;
+}
+/*The Content*/
+.scroll-me {
+    min-width: 750px;
 }

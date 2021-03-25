@@ -1,7 +1,6 @@
 import React from "react"
 import { Route, Redirect } from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
-import { Link } from "react-router-dom"
 import { ActivityProvider } from "./activities/ActivityProvider"
 import { ActivityList } from "./activities/ActivityList"
 import { ActivityForm } from "./activities/ActivityForm"
@@ -20,7 +19,7 @@ export const ApplicationViews= (props) => (
     <>
         <div className="mainContainer">
                     <div className="header" id="myHeader">
-                        <h2>RecHub</h2>
+                        <div className="headerImage"></div>
                     </div>
                     <Route render={props => <NavBar {...props} />} />
                         <ActivityProvider>

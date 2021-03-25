@@ -7,8 +7,17 @@
 }
 .header {
     background-color: rgb(58, 99, 81);
-    height: 100px;
-    color: rgb(228, 130, 87);
+    height: 7rem;
+    display: flex;
+    justify-content: center;
+}
+.headerImage {
+    background-image: url("./Rec-Hub.png");
+    height: 7rem;
+    width: 7rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 50%;
 }
 .list-group {
     display: flex;
