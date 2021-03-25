@@ -59,20 +59,20 @@ export const ContainerForm = (props) => {
 
     if(editMode) {
         return(
-            <form className="container_form" onSubmit={handleSubmit(putUpdatedCont)}>
+            <form className="rec_form" onSubmit={handleSubmit(putUpdatedCont)}>
                 <div className="column">
-                    <h5>Add new container </h5>
+                    <h5 className="h5">Edit a container </h5>
                     <input name="name" type="text" value={container.name} onChange={handleControlledInputChange} ref={register({ required: true })} />
-                    <button className="btn btn-dark" type="submit">Save</button>
+                    <button className="btn btn-secondary" type="submit">Save</button>
                 </div>
             </form>
     )} else {
         return(
-            <form className="container_form" onSubmit={handleSubmit(createNewContainer)}>
+            <form className="rec_form" onSubmit={handleSubmit(createNewContainer)}>
                 <div className="column">
-                    <h5>Add new container </h5>
+                    <h5 className="h5">Add new container </h5>
                     <input name="name" type="text" defaultValue="" ref={register({ required: true })} />
-                    <button className="btn btn-dark" type="submit">Save</button>
+                    <button className="btn btn-secondary" type="submit">Save</button>
                 </div>
             </form>
     )}

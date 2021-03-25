@@ -14,20 +14,20 @@ export const ContainerList = (props) => {
     return (
         <>
             <div className="column">
-            <h1>Containers</h1>
-            <button className="btn btn-success" onClick={() => {
+                <h1 className="h1">Containers</h1>
+                <button className="btn btn-success" onClick={() => {
                     props.history.push(`/containers/add`)
                 }}>New Container
                 </button>
-                <div className="column">
+                    <div className="column">
                     {containers
-                    .map(container => {
+                        .map(container => {
                             return <Container key={container.id} 
-                                        container={container}
-                                    />
-                    })
+                                                    container={container}
+                            />
+                        })
                     }
-                </div>
+                    </div>
             </div>
         </>
     )

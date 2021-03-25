@@ -29,7 +29,7 @@ export const ContainerDetails = (props) => {
     return (
         <section className="container">
             <h3 className="container__name">{container.name}</h3>
-            <h3>Items</h3>
+            <h3 className="h3">Items</h3>
             <div>
                 {filteredItems
                     // .filter(i => i.container !== null)

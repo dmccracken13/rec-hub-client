@@ -18,7 +18,7 @@ export const ItemList = (props) => {
     return (
         <>
             <div className="column">
-            <h1>Items</h1>
+            <h1 className="h1">Items</h1>
             <button className="btn btn-success" onClick={() => {
                     props.history.push(`/items/add`)
                 }}>New Item                

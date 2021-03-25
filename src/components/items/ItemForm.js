@@ -88,10 +88,10 @@ export const ItemForm = (props) => {
             <>    
                 <form className="item_form" onSubmit={handleSubmit(putUpdatedItem)}>
                     <div className="column">
-                        <h5>Edit an item </h5>
+                        <h5 className="h5">Edit an item </h5>
                         <input name="name" type="text" value={item.name} onChange={handleControlledInputChange} ref={register({ required: true })} />
                     </div>
-                    <label>Choose a status</label>
+                    <label className="h5">Choose a status</label>
                     <select name="status" value={item.status.id} onChange={handleControlledInputChange} ref={register({ required: true })}>
                         <option value="0">Select...</option>
                             {statuses.map(s => (
@@ -100,7 +100,7 @@ export const ItemForm = (props) => {
                                 </option>
                             ))}
                     </select>
-                    <label>Choose a type</label>
+                    <label className="h5">Choose a type</label>
                     <select name="type" value={item.type.id} onChange={handleControlledInputChange} ref={register({ required: true })}>
                         <option value="0">Select...</option>
                             {types.map(t => (
@@ -109,9 +109,9 @@ export const ItemForm = (props) => {
                                 </option>
                             ))}
                     </select>
-                    <label>Quantity</label>
+                    <label className="h5">Quantity</label>
                     <input name="quantity" type="integer" value={item.quantity} onChange={handleControlledInputChange} ref={register({ required: true })} />
-                    <label>Choose an activity </label>
+                    <label className="h5">Choose an activity </label>
                     <select name="activity" value={item.activity.id} onChange={handleControlledInputChange} ref={register({ required: true })}>
                         <option value="0">Select...</option>
                             {activities.map(a => (
@@ -120,7 +120,7 @@ export const ItemForm = (props) => {
                                 </option>
                             ))}
                     </select>
-                    <label>Choose a container</label>
+                    <label className="h5">Choose a container</label>
                     <select name="container" value={item.container === null ? "0" : item.container.id} onChange={handleControlledInputChange} ref={register({ required: true })}>
                         <option value="0">Select...</option>
                             {containers.map(c => (
@@ -129,7 +129,7 @@ export const ItemForm = (props) => {
                                 </option>
                             ))}
                     </select>
-                    <button className="btn btn-dark" type="submit">Save</button>
+                    <button className="btn btn-secondary" type="submit">Save</button>
                 </form>
             </>
         )} else {
@@ -137,10 +137,10 @@ export const ItemForm = (props) => {
                 <>    
                     <form className="item_form" onSubmit={handleSubmit(createNewItem)}>
                         <div className="column">
-                            <h5>Add new items </h5>
+                            <h5 className="h5">Add new items </h5>
                             <input name="name" type="text" defaultValue="" ref={register({ required: true })} />
                         </div>
-                        <label>Choose a status</label>
+                        <label className="h5">Choose a status</label>
                         <select name="status" ref={register({ required: true })}>
                             <option value="0">Select...</option>
                                 {statuses.map(s => (
@@ -149,7 +149,7 @@ export const ItemForm = (props) => {
                                     </option>
                                 ))}
                         </select>
-                        <label>Choose a type</label>
+                        <label className="h5">Choose a type</label>
                         <select name="type" ref={register({ required: true })}>
                             <option value="0">Select...</option>
                                 {types.map(t => (
@@ -158,9 +158,9 @@ export const ItemForm = (props) => {
                                     </option>
                                 ))}
                         </select>
-                        <label>Quantity</label>
+                        <label className="h5">Quantity</label>
                         <input name="quantity" type="integer" defaultValue="" ref={register({ required: true })} />
-                        <label>Choose an activity </label>
+                        <label className="h5">Choose an activity </label>
                         <select name="activity" ref={register({ required: true })}>
                             <option value="0">Select...</option>
                                 {activities.map(a => (
@@ -169,7 +169,7 @@ export const ItemForm = (props) => {
                                     </option>
                                 ))}
                         </select>
-                        <label>Choose a container</label>
+                        <label className="h5">Choose a container</label>
                         <select name="container" ref={register({ required: true })}>
                             <option value="0">Select...</option>
                                 {containers.map(c => (
@@ -178,7 +178,7 @@ export const ItemForm = (props) => {
                                     </option>
                                 ))}
                         </select>
-                        <button className="btn btn-dark" type="submit">Submit</button>
+                        <button className="btn btn-secondary" type="submit">Submit</button>
                     </form>
                 </>
             )}

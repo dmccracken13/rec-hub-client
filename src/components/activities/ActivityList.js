@@ -10,24 +10,26 @@ export const ActivityList = (props) => {
         getActivities()
     }, [])
 
+    
+
     return (
         <>
-            <div className="column">
-            <h1>Activities</h1>
-            <button className="btn btn-success" onClick={() => {
-                    props.history.push(`/activities/add`)
-                }}>New Activity
-            </button>
-                <div className="column">
-                    {activities
-                    .map(activity => {
-                            return <Activity key={activity.id} 
-                            activity={activity} 
-                            />
-                    })
-                    }
-                </div>
-            </div>
+                    <div className="column">
+                    <h1 className="h1">Activities</h1>
+                    <button className="btn btn-success" onClick={() => {
+                            props.history.push(`/activities/add`)
+                        }}>New Activity
+                    </button>
+                        <div className="column">
+                            {activities
+                            .map(activity => {
+                                    return <Activity key={activity.id} 
+                                    activity={activity} 
+                                    />
+                            })
+                            }
+                        </div>
+                    </div>
         </>
     )
 }

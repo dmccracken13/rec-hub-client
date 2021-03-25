@@ -59,18 +59,18 @@ export const ActivityForm = (props) => {
 
     if(editMode) {
         return(
-            <form className="activity_form" onSubmit={handleSubmit(putUpdatedAct)}>
+            <form className="rec_form" onSubmit={handleSubmit(putUpdatedAct)}>
                 <div className="column">
-                    <h5>Edit an activity </h5>
+                    <h5 className="h5">Edit an activity </h5>
                     <input name="name" type="text" value={activity.name} onChange={handleControlledInputChange} ref={register({ required: true })} />
                     <button className="btn btn-dark" type="submit">Save</button>
                 </div>
             </form>
     )} else {
         return(    
-            <form className="activity_form" onSubmit={handleSubmit(createNewActivity)}>
+            <form className="rec_form" onSubmit={handleSubmit(createNewActivity)}>
                 <div className="column">
-                    <h5>Add new activity </h5>
+                    <h5 className="h5">Add new activity </h5>
                     <input name="name" type="text" defaultValue="" ref={register({ required: true })} />
                     <button className="btn btn-dark" type="submit">Submit</button>
                 </div>
