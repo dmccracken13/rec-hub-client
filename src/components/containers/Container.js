@@ -10,7 +10,7 @@ export const Container = ({ container }) => {
     const history = useHistory()
     return(
         <>
-        <section className="card d-flex justify-content-center" style={{ width: '12rem', height: '6rem' }}>
+        <section className="container-card d-flex justify-content-center" style={{ width: '12rem', height: '6rem' }}>
             <div className="container__name">{container.name}</div>
         </section>    
         <button className="btn btn-secondary" onClick={() => {

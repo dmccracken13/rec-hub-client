@@ -1,6 +1,13 @@
 .navbar {
     background-color: rgb(57, 50, 50);
+    position: fixed;
+    width: 100%;
+    top: 112px;
+    z-index:100;
 }
 .navbar__link {
+    color:  rgb(242, 237, 215)
+}
+.logout {
     color:  rgb(242, 237, 215)
 }

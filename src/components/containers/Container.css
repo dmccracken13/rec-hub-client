@@ -3,31 +3,40 @@
     flex-direction: row;
     text-align: left;
 }
-.card {
-    background-color: rgb(58, 99, 81);
+.container-card {
+    /* background-color: rgb(58, 99, 81); */
+    background-image: url("./Back Pack.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    text-shadow: 0px 0px 8px  rgb(57, 50, 50);
     color: rgb(228, 130, 87);
+    font-size: 18px;
+    margin-bottom: 3px;
 }
 .container {
     display: flex;
     flex-direction: column;
 }
-.docForm {
+.rec_form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 500px;
-}
-.docSearch {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 500px
+    padding-bottom: 200px;
 }
 .col {
-    justify-content: space-evenly;
-}
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}s
 .h1 {
+    background-color:  rgb(228, 130, 87);
+    background-size: contain;
+    opacity: initial;
     color: rgb(57, 50, 50);
+    border-radius: 12px;
+    text-align: center;
 }
 .h5 {
     color: rgb(242, 237, 215);

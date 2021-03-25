@@ -1,20 +1,25 @@
 .mainContainer {
     background-image: url("./Zion.jpg");
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: 50% 80%;
     background-size: auto;
-    /* height: 600px; */
+    background-attachment: fixed;
 }
 .header {
-    background-color: rgb(58, 99, 81);
+    /* background-color: rgb(58, 99, 81); */
+    background-image: url("./Mnt-Range.png");
+    background-size: contain;
     height: 7rem;
+    width: 100%;
     display: flex;
     justify-content: center;
+    position: fixed;
+    z-index: 100;
 }
 .headerImage {
     background-image: url("./Rec-Hub.png");
     height: 7rem;
-    width: 7rem;
+    width: 6.89rem;
     background-size: contain;
     background-repeat: no-repeat;
     border-radius: 50%;
@@ -22,4 +27,5 @@
 .list-group {
     display: flex;
     justify-content: space-evenly;
+    padding-top: 180px;
 }
